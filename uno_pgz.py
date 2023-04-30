@@ -2,11 +2,6 @@ from random import shuffle, choice, randint
 from itertools import product, repeat, chain
 from threading import Thread
 from time import sleep
-from uno import UnoPlayer
-from uno import UnoCard
-from uno import UnoGame
-from uno import AIUnoGame
-from uno import ReversibleCycle
 
 
 COLORS = ['red', 'yellow', 'green', 'blue']
