@@ -352,8 +352,53 @@ class TestUnoUnitTests(unittest.TestCase):
     # def test(self):
     #     pass
     # def test(self):
+#ReversibleCycle Tests
+#-----------------------------------------------------------------------------------------------------------------------------
+    def test_init_items(self):
+        self.assertEqual(self.rc._items, [0, 1, 2])    
+    def test_init_pos(self):
+        self.assertIsNone(self.rc._pos)
+    def test_init_reverse(self):
+        self.assertFalse(self.rc._reverse)
 
+    def test_next_forward(self):
+        # Test forward cycle
+        # multiple asserts to make sure the cycle is working
+        self.assertEqual(next(self.rc), 0)
+        self.assertEqual(next(self.rc), 1)
+        self.assertEqual(next(self.rc), 2)
+        self.assertEqual(next(self.rc), 0)
+        self.assertEqual(next(self.rc), 1)
+    
+    def test_next_reverse(self):
+        # Test reverse cycle
+        # multiple asserts to make sure the cycle is working
+        self.rc.reverse()
+        self.assertEqual(next(self.rc), 2)
+        self.assertEqual(next(self.rc), 1)
+        self.assertEqual(next(self.rc), 0)
+        self.assertEqual(next(self.rc), 2)
+        self.assertEqual(next(self.rc), 1)
+
+    def test_reverse(self):
+        self.assertFalse(self.rc._reverse)
+        self.rc.reverse()
+        self.assertTrue(self.rc._reverse)
+        self.rc.reverse()
+        self.assertFalse(self.rc._reverse)
+
+    def test_pos_forward(self):
+        # Test forward cycle
+        self.rc.pos = 1
+        self.assertEqual(self.rc.pos, 1)
+
+    def test_pos_reverse(self):
+        # Test reverse cycle
+        self.rc.reverse()
+        self.rc.pos = 1
+        self.assertEqual(self.rc.pos, 1)
 #integreation Test
+#-----------------------------------------------------------------------------------------------------------------------------
     def test_create_uno_card(self):
         # Test that a valid UnoCard can be created
         card = UnoCard('red', 5)
@@ -409,51 +454,7 @@ class TestUnoUnitTests(unittest.TestCase):
         self.assertNotEqual(unshuffled_deck, shuffled_deck)
 
 
-#ReversibleCycle Tests
-#-----------------------------------------------------------------------------------------------------------------------------
-    def test_init_items(self):
-        self.assertEqual(self.rc._items, [0, 1, 2])    
-    def test_init_pos(self):
-        self.assertIsNone(self.rc._pos)
-    def test_init_reverse(self):
-        self.assertFalse(self.rc._reverse)
 
-    def test_next_forward(self):
-        # Test forward cycle
-        # multiple asserts to make sure the cycle is working
-        self.assertEqual(next(self.rc), 0)
-        self.assertEqual(next(self.rc), 1)
-        self.assertEqual(next(self.rc), 2)
-        self.assertEqual(next(self.rc), 0)
-        self.assertEqual(next(self.rc), 1)
-    
-    def test_next_reverse(self):
-        # Test reverse cycle
-        # multiple asserts to make sure the cycle is working
-        self.rc.reverse()
-        self.assertEqual(next(self.rc), 2)
-        self.assertEqual(next(self.rc), 1)
-        self.assertEqual(next(self.rc), 0)
-        self.assertEqual(next(self.rc), 2)
-        self.assertEqual(next(self.rc), 1)
-
-    def test_reverse(self):
-        self.assertFalse(self.rc._reverse)
-        self.rc.reverse()
-        self.assertTrue(self.rc._reverse)
-        self.rc.reverse()
-        self.assertFalse(self.rc._reverse)
-
-    def test_pos_forward(self):
-        # Test forward cycle
-        self.rc.pos = 1
-        self.assertEqual(self.rc.pos, 1)
-
-    def test_pos_reverse(self):
-        # Test reverse cycle
-        self.rc.reverse()
-        self.rc.pos = 1
-        self.assertEqual(self.rc.pos, 1)
 
 
 #-----------------------------------------------------------------------------------------------------------------------------
