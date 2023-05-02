@@ -19,6 +19,9 @@ jobs:
           cache: 'pip'
       - name: Install ruff
         run: pip install ruff
+      - name: Install coverage
+        run: pip install coverage
+
         
       - name: Lint with ruff
         run: |
