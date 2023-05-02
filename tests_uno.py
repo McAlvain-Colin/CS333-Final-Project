@@ -236,6 +236,14 @@ class TestUnoUnitTests(unittest.TestCase):
     def test_UnoPlayer_init_player_hand(self):
         player1 = UnoPlayer(self.cards, 1)
         self.assertEqual(len(player1.hand), 7)
+    def test_UnoPlayer_can_play_return_true(self):
+        player1 = UnoPlayer(self.cards, 1)
+        self.currentCard = self.cardR3 
+        self.assertTrue(player1.can_play())
+    def test_UnoPlayer_can_play_return_false(self):
+        player1 = UnoPlayer(self.cards, 1)
+        self.currentCard = self.cardY7 
+        self.assertFalse(player1.can_play())
     # def test_UnoPlayer_init_player_hand_error_not_triggered(self):
     #     with self.assertRaises(ValueError):
     #         player3 = UnoPlayer('player3', self.cards)
