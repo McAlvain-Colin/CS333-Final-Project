@@ -255,46 +255,104 @@ class TestUnoUnitTests(unittest.TestCase):
 
 #UnoGame Tests
 #-----------------------------------------------------------------------------------------------------------------------------
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
+    def test_init_game_is_created(self):
+        game = UnoGame(4)
+        self.assertIsInstance(game, UnoGame)
+    def test_init_game_num_players(self):
+        game = UnoGame(4)
+        self.assertEqual(len(game.players), 4)
+    def test_init_game_deck_correct(self):
+        game = UnoGame(4)
+        self.assertEqual(len(game.deck), 80)
+    def test_init_game_deck_is_unoCard_objects(self):
+        game = UnoGame(4)
+        self.assertIsInstance(game.deck[0], UnoCard)
+    def test_init_game_winner(self):
+        game = UnoGame(4)
+        self.assertIsNone(game._winner)
+    def test_deal_hand_is_list(self):
+        game = UnoGame(3)
+        hand1 = game._deal_hand()
+        self.assertIsInstance(hand1, list)
+    def test_deal_hand_is_UnoCard(self):
+        game = UnoGame(3)
+        hand1 = game._deal_hand()
+        self.assertIsInstance(hand1[0], UnoCard)
+    def test_deal_hand_is_7_cards(self):
+        game = UnoGame(3)
+        hand1 = game._deal_hand()
+        self.assertEqual(len(hand1), 7)
+    def test_deal_hand_not_equal_to_second_hand_1(self):
+        game = UnoGame(3)
+        hand1 = game._deal_hand()
+        hand2 = game._deal_hand()
+        self.assertNotEqual(hand1, hand2)
+    def test_deal_hand_not_equal_to_second_hand_2(self):
+        game = UnoGame(3)
+        hand2 = game._deal_hand()
+        hand3 = game._deal_hand()
+        self.assertNotEqual(hand2, hand3)
+    def test_deal_hand_not_equal_to_second_hand_3(self):
+        game = UnoGame(3)
+        hand1 = game._deal_hand()
+        hand3 = game._deal_hand()
+        self.assertNotEqual(hand1, hand3)
+    def test_next_player(self):
+        #This test breaks conventions to use multiple asserts to show we are changing players
+        game = UnoGame(2)
+        self.assertEqual(game._current_player, game.players[0])
+        next(game)
+        self.assertEqual(game._current_player, game.players[1])
+        next(game)
+        self.assertEqual(game._current_player, game.players[0])
+    def test_playing_a_card_that_is_playable_(self):
+        game = UnoGame(2, random=False)
+        game._current_player.hand = [
+            UnoCard('red', 5),
+            UnoCard('blue', 7),
+            UnoCard('yellow', 2),
+            UnoCard('green', 'skip'),
+            UnoCard('black', 'wildcard'),
+        ]
+        game._current_card = UnoCard('blue', 4)
+        
+        # Test playing a card that is playable
+        played_card = game.play_card(1)
+
+        self.assertEqual(played_card, UnoCard('blue', 7))
+    def test_playing_a_card_that_is_playable_current_hand_size(self):
+        game = UnoGame(2, random=False)
+        game._current_player.hand = [
+            UnoCard('red', 5),
+            UnoCard('blue', 7),
+            UnoCard('yellow', 2),
+            UnoCard('green', 'skip'),
+            UnoCard('black', 'wildcard'),
+        ]
+        game._current_card = self.cardB4
+
+        self.assertEqual(len(game._current_player.hand), 5)
+    def test_playing_a_card_that_is_playable_UnoCard(self):
+        game = UnoGame(2, random=False)
+        game._current_player.hand = [
+            UnoCard('red', 5),
+            UnoCard('blue', 7),
+            UnoCard('yellow', 2),
+            UnoCard('green', 'skip'),
+            UnoCard('black', 'wildcard'),
+        ]
+        game._current_card = self.cardB7
+
+        self.assertEqual(game._current_card, self.cardB7)
+
+    def test_playing_a_card_that_is_playable_(self):
+        pass
+    def test_playing_a_card_that_is_playable_(self):
+        pass
+    def test_playing_a_card_that_is_playable_(self):
+        pass
+    def test_playing_a_card_that_is_playable_(self):
+        pass
     # def test(self):
     #     pass
     # def test(self):
