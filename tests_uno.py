@@ -298,14 +298,15 @@ class TestUnoUnitTests(unittest.TestCase):
         hand3 = game._deal_hand()
         self.assertNotEqual(hand1, hand3)
     def test_next_player(self):
-        #This test breaks conventions to use multiple asserts to show we are changing players
+        #This test breaks conventions to use multiple 
+        # asserts to show we are changing players
         game = UnoGame(2)
         self.assertEqual(game._current_player, game.players[0])
         next(game)
         self.assertEqual(game._current_player, game.players[1])
         next(game)
         self.assertEqual(game._current_player, game.players[0])
-    def test_playing_a_card_that_is_playable_(self):
+    def test_playing_a_card_that_is_playable_card_played(self):
         game = UnoGame(2, random=False)
         game._current_player.hand = [
             UnoCard('red', 5),
@@ -345,14 +346,6 @@ class TestUnoUnitTests(unittest.TestCase):
 
         self.assertEqual(game._current_card, self.cardB7)
 
-    def test_playing_a_card_that_is_playable_(self):
-        pass
-    def test_playing_a_card_that_is_playable_(self):
-        pass
-    def test_playing_a_card_that_is_playable_(self):
-        pass
-    def test_playing_a_card_that_is_playable_(self):
-        pass
     # def test(self):
     #     pass
     # def test(self):
@@ -427,6 +420,7 @@ class TestUnoUnitTests(unittest.TestCase):
         shuffled_deck = [str(card) for card in deck]
         shuffle(shuffled_deck)
         self.assertNotEqual(unshuffled_deck, shuffled_deck)
+
 
 
 #-----------------------------------------------------------------------------------------------------------------------------
