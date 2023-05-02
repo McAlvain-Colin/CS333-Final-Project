@@ -244,12 +244,14 @@ class TestUnoUnitTests(unittest.TestCase):
         player1 = UnoPlayer(self.cards, 1)
         self.currentCard = self.cardY7 
         self.assertFalse(player1.can_play(self.currentCard))
-    # def test_UnoPlayer_init_player_hand_error_not_triggered(self):
-    #     with self.assertRaises(ValueError):
-    #         player3 = UnoPlayer('player3', self.cards)
-    # def test_UnoPlayer_init_player_hand_error_triggered_invalid_color(self):
-    #     with self.assertRaises(ValueError):
-    #         player4 = UnoPlayer(4, [UnoCard('purple', 1), UnoCard('blue', 'skip')])
+    def test_UnoPlayer_init_player_hand_error_not_triggered(self):
+        with self.assertRaises(ValueError):
+            player3 = UnoPlayer('player3', self.cards)
+            player3
+    def test_UnoPlayer_init_player_hand_error_triggered_invalid_color(self):
+        with self.assertRaises(ValueError):
+            player4 = UnoPlayer(4, [UnoCard('purple', 1), UnoCard('blue', 'skip')])
+            player4
 
 #UnoGame Tests
 #-----------------------------------------------------------------------------------------------------------------------------
