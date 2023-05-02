@@ -4,6 +4,7 @@ import random
 players = random.randint(2, 15)
 game = UnoGame(players)
 
+print("Hello World")
 print("Starting a {} player game".format(players))
 
 count = 0

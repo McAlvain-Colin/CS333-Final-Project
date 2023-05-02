@@ -187,6 +187,8 @@ run docker image
     docker pull cmcalvain/uno:latest
     docker images
     docker run -ti cmcalvain/uno
+remove any unwanted docker images
+    docker rmi cmcalvain/uno
 
 Credits
 -------
