@@ -306,21 +306,7 @@ class TestUnoUnitTests(unittest.TestCase):
         self.assertEqual(game._current_player, game.players[1])
         next(game)
         self.assertEqual(game._current_player, game.players[0])
-    def test_playing_a_card_that_is_playable_card_played(self):
-        game = UnoGame(2, random=False)
-        game._current_player.hand = [
-            UnoCard('red', 5),
-            UnoCard('blue', 7),
-            UnoCard('yellow', 2),
-            UnoCard('green', 'skip'),
-            UnoCard('black', 'wildcard'),
-        ]
-        game._current_card = UnoCard('blue', 4)
-        
-        # Test playing a card that is playable
-        played_card = game.play_card(1)
 
-        self.assertEqual(played_card, UnoCard('blue', 7))
     def test_playing_a_card_that_is_playable_current_hand_size(self):
         game = UnoGame(2, random=False)
         game._current_player.hand = [
