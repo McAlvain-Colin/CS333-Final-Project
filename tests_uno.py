@@ -85,163 +85,111 @@ class TestUnoUnitTests(unittest.TestCase):
         self.cardR0
         self.assertEqual(self.cardR0.color , "red")
     def test_uno_card_init_card_type_red_0(self):
-        self.cardR0
         self.assertEqual(self.cardR0.card_type , 0)
     def test_uno_card_init_card_type_red_1(self):
-        self.cardR1
         self.assertEqual(self.cardR1.card_type , 1)
     def test_uno_card_init_card_type_red_2(self):
-        self.cardR2
         self.assertEqual(self.cardR2.card_type , 2)
     def test_uno_card_init_card_type_red_3(self):
-        self.cardR3
         self.assertEqual(self.cardR3.card_type , 3)
     def test_uno_card_init_card_type_red_4(self):
-        self.cardR4
         self.assertEqual(self.cardR4.card_type , 4)
     def test_uno_card_init_card_type_red_5(self):
-        self.cardR5
         self.assertEqual(self.cardR5.card_type , 5)
     def test_uno_card_init_card_type_red_6(self):
-        self.cardR6
         self.assertEqual(self.cardR6.card_type , 6)
     def test_uno_card_init_card_type_red_7(self):
-        self.cardR7
         self.assertEqual(self.cardR7.card_type , 7)
     def test_uno_card_init_card_type_red_8(self):
-        self.cardR8
         self.assertEqual(self.cardR8.card_type , 8)
     def test_uno_card_init_card_type_red_9(self):
-        self.cardR9
         self.assertEqual(self.cardR9.card_type , 9)
     def test_uno_card_init_card_type_red_skip(self):
-        self.cardR0
         self.assertEqual(self.cardRSkip.card_type , "skip")
     def test_uno_card_init_card_type_red_reverse(self):
-        self.cardR0
         self.assertEqual(self.cardBReverse.card_type , "reverse")
     def test_uno_card_init_card_type_red_plus_2(self):
-        self.cardR0
         self.assertEqual(self.cardRPlus2.card_type , "+2")
 
     def test_uno_card_init_card_type_yellow_color(self):
-        self.cardY0
         self.assertEqual(self.cardY0.color , "yellow")
     def test_uno_card_init_card_type_yellow_0(self):
-        self.cardY0
         self.assertEqual(self.cardY0.card_type , 0)
     def test_uno_card_init_card_type_yellow_1(self):
-        self.cardY1
         self.assertEqual(self.cardY1.card_type , 1)
     def test_uno_card_init_card_type_yellow_2(self):
-        self.cardY2
         self.assertEqual(self.cardY2.card_type , 2)
     def test_uno_card_init_card_type_yellow_3(self):
-        self.cardY3
         self.assertEqual(self.cardY3.card_type , 3)
     def test_uno_card_init_card_type_yellow_4(self):
-        self.cardY4
         self.assertEqual(self.cardY4.card_type , 4)
     def test_uno_card_init_card_type_yellow_5(self):
-        self.cardY5
         self.assertEqual(self.cardY5.card_type , 5)
     def test_uno_card_init_card_type_yellow_6(self):
-        self.cardY6
         self.assertEqual(self.cardY6.card_type , 6)
     def test_uno_card_init_card_type_yellow_7(self):
-        self.cardY7
         self.assertEqual(self.cardY7.card_type , 7)
     def test_uno_card_init_card_type_yellow_8(self):
-        self.cardY8
         self.assertEqual(self.cardY8.card_type , 8)
     def test_uno_card_init_card_type_yellow_9(self):
-        self.cardY9
         self.assertEqual(self.cardY9.card_type , 9)
     def test_uno_card_init_card_type_yellow_skip(self):
-        self.cardY0
         self.assertEqual(self.cardYSkip.card_type , "skip")
     def test_uno_card_init_card_type_yellow__reverse(self):
-        self.cardY0
         self.assertEqual(self.cardYReverse.card_type , "reverse")
     def test_uno_card_init_card_type_yellow_plus_2(self):
-        self.cardY0
         self.assertEqual(self.cardYPlus2.card_type , "+2")
 
     def test_uno_card_init_card_type_green_color(self):
-        self.cardG0
         self.assertEqual(self.cardG0.color , "green")
     def test_uno_card_init_card_type_green_0(self):
-        self.cardG0
         self.assertEqual(self.cardG0.card_type , 0)
     def test_uno_card_init_card_type_green_1(self):
-        self.cardG1
         self.assertEqual(self.cardG1.card_type , 1)
     def test_uno_card_init_card_type_green_2(self):
-        self.cardG2
         self.assertEqual(self.cardG2.card_type , 2)
     def test_uno_card_init_card_type_green_3(self):
-        self.cardG3
         self.assertEqual(self.cardG3.card_type , 3)
     def test_uno_card_init_card_type_green_4(self):
-        self.cardG4
         self.assertEqual(self.cardG4.card_type , 4)
     def test_uno_card_init_card_type_green_5(self):
-        self.cardG5
         self.assertEqual(self.cardG5.card_type , 5)
     def test_uno_card_init_card_type_green_6(self):
-        self.cardG6
         self.assertEqual(self.cardG6.card_type , 6)
     def test_uno_card_init_card_type_green_7(self):
-        self.cardG7
         self.assertEqual(self.cardG7.card_type , 7)
     def test_uno_card_init_card_type_green_8(self):
-        self.cardG8
         self.assertEqual(self.cardG8.card_type , 8)
     def test_uno_card_init_card_type_green_9(self):
-        self.cardG9
         self.assertEqual(self.cardG9.card_type , 9)
     def test_uno_card_init_card_type_green_skip(self):
-        self.cardG0
         self.assertEqual(self.cardGSkip.card_type , "skip")
     def test_uno_card_init_card_type_green_reverse(self):
-        self.cardG0
         self.assertEqual(self.cardGReverse.card_type , "reverse")
     def test_uno_card_init_card_type_green_plus_2(self):
-        self.cardG0
         self.assertEqual(self.cardGPlus2.card_type , "+2")
 
     def test_uno_card_init_card_type_blue_color(self):
-        self.cardB0
         self.assertEqual(self.cardB0.color , "blue")
     def test_uno_card_init_card_type_blue_0(self):
-        self.cardB0
         self.assertEqual(self.cardB0.card_type , 0)
     def test_uno_card_init_card_type_blue_1(self):
-        self.cardB1
         self.assertEqual(self.cardB1.card_type , 1)
     def test_uno_card_init_card_type_blue_2(self):
-        self.cardB2
         self.assertEqual(self.cardB2.card_type , 2)
     def test_uno_card_init_card_type_blue_3(self):
-        self.cardB3
         self.assertEqual(self.cardB3.card_type , 3)
     def test_uno_card_init_card_type_blue_4(self):
-        self.cardB4
         self.assertEqual(self.cardB4.card_type , 4)
     def test_uno_card_init_card_type_blue_5(self):
-        self.cardB5
         self.assertEqual(self.cardB5.card_type , 5)
     def test_uno_card_init_card_type_blue_6(self):
-        self.cardB6
         self.assertEqual(self.cardB6.card_type , 6)
     def test_uno_card_init_card_type_blue_7(self):
-        self.cardB7
         self.assertEqual(self.cardB7.card_type , 7)
     def test_uno_card_init_card_type_blue_8(self):
-        self.cardB8
         self.assertEqual(self.cardB8.card_type , 8)
     def test_uno_card_init_card_type_blue_9(self):
-        self.cardB9
         self.assertEqual(self.cardB9.card_type , 9)
     def test_uno_card_init_card_type_blue_skip(self):
         self.assertEqual(self.cardBSkip.card_type , "skip")
@@ -251,7 +199,6 @@ class TestUnoUnitTests(unittest.TestCase):
         self.assertEqual(self.cardRPlus2.card_type , "+2")
 
     def test_uno_card_init_card_type_wild_color(self):
-        self.cardW
         self.assertEqual(self.cardR0.color , "black")
     def test_uno_card_init_card_type_wild_type(self):
         self.assertEqual(self.cardBReverse.card_type , "reverse")
@@ -259,13 +206,10 @@ class TestUnoUnitTests(unittest.TestCase):
         self.assertEqual(self.cardRPlus2.card_type , "+2")
 
     def test_uno_card_init_card_type_wild_draw_4_color(self):
-        self.cardW4
         self.assertEqual(self.cardW4.color , "black")
     def test_uno_card_init_card_type_wild_draw_4_type(self):
-        self.cardB0
         self.assertEqual(self.cardBReverse.card_type , "reverse")
     def test_uno_card_init_card_type_wild_draw_4_color(self):
-        self.cardB0
         self.assertEqual(self.cardRPlus2.card_type , "+2")
 
     def test_str_string_return_test_1(self):
