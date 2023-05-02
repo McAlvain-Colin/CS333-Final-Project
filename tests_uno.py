@@ -196,21 +196,17 @@ class TestUnoUnitTests(unittest.TestCase):
     def test_uno_card_init_card_type_blue_reverse(self):
         self.assertEqual(self.cardBReverse.card_type , "reverse")
     def test_uno_card_init_card_type_blue_plus_2(self):
-        self.assertEqual(self.cardRPlus2.card_type , "+2")
+        self.assertEqual(self.cardBPlus2.card_type , "+2")
 
     def test_uno_card_init_card_type_wild_color(self):
-        self.assertEqual(self.cardR0.color , "black")
+        self.assertEqual(self.cardW.color , "black")
     def test_uno_card_init_card_type_wild_type(self):
-        self.assertEqual(self.cardBReverse.card_type , "reverse")
-    def test_uno_card_init_card_type_wild_color(self):
-        self.assertEqual(self.cardRPlus2.card_type , "+2")
+        self.assertEqual(self.cardW.card_type , "wildcard")
 
     def test_uno_card_init_card_type_wild_draw_4_color(self):
         self.assertEqual(self.cardW4.color , "black")
     def test_uno_card_init_card_type_wild_draw_4_type(self):
-        self.assertEqual(self.cardBReverse.card_type , "reverse")
-    def test_uno_card_init_card_type_wild_draw_4_color(self):
-        self.assertEqual(self.cardRPlus2.card_type , "+2")
+        self.assertEqual(self.cardW4.card_type , "+4")
 
     def test_str_string_return_test_1(self):
         self.assertEqual(str(self.cardR1), 'R1')
