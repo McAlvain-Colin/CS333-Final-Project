@@ -185,6 +185,7 @@ class UnoGame:
         penalty_cards = [self.deck.pop(0) for i in range(n)]
         player.hand.extend(penalty_cards)
 
+    
 
 class ReversibleCycle:
     def __init__(self, iterable):

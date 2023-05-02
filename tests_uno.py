@@ -253,6 +253,24 @@ class TestUnoUnitTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             player4 = UnoPlayer(4, [UnoCard('purple', 1), UnoCard('blue', 'skip')])
             player4
+    def test_invalid_player(self):
+        game = self.game
+        invalid_player = "invalid_player"
+        with self.assertRaises(ValueError):
+            game.play(invalid_player)
+    def test_player_index_out_of_range(self):
+        game = self.game
+        player_index = len(game.players)
+        with self.assertRaises(ValueError):
+            game.play(player_index)
+    def test_draw_card(self):
+        game = self.game
+        player_index = 0
+        initial_hand_size = len(game.players[player_index].hand)
+        game.play(player_index, card=None, new_color=None)
+        expected_hand_size = initial_hand_size + 1
+        actual_hand_size = len(game.players[player_index].hand)
+        self.assertEqual(expected_hand_size, actual_hand_size)
 
 #UnoGame Tests
 #-----------------------------------------------------------------------------------------------------------------------------
@@ -333,25 +351,18 @@ class TestUnoUnitTests(unittest.TestCase):
 
         self.assertEqual(game._current_card, self.cardB7)
 
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
-    #     pass
-    # def test(self):
+    def test_play_invalid_player(self):
+        with self.assertRaises(ValueError):
+            self.game.play('not an int')
+
+    def test_play_invalid_player_index(self):
+        with self.assertRaises(ValueError):
+            self.game.play(10)
+
+    def test_play_not_players_turn(self):
+        with self.assertRaises(ValueError):
+            self.game.play(1)
+
 #ReversibleCycle Tests
 #-----------------------------------------------------------------------------------------------------------------------------
     def test_init_items(self):
@@ -397,6 +408,7 @@ class TestUnoUnitTests(unittest.TestCase):
         self.rc.reverse()
         self.rc.pos = 1
         self.assertEqual(self.rc.pos, 1)
+#        
 #integreation Test
 #-----------------------------------------------------------------------------------------------------------------------------
     def test_create_uno_card(self):
