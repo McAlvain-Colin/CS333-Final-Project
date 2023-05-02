@@ -225,7 +225,7 @@ class TestUnoUnitTests(unittest.TestCase):
     def test_validate_color_is_black_and_card_type_not_in_black_card_type_true(self):
         with self.assertRaises(ValueError):
             self.cardR1._validate('black', '2')
-    def test_validate_color_is_not_black_and_card_type_not_in_black_card_type_false(self):
+    def test_color_not_black_and_card_type_not_in_black_card_type_false(self):
         self.assertIsNone(self.cardGSkip._validate('green', 'skip'))
 
 #UnoPlayer Tests
