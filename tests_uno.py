@@ -330,7 +330,7 @@ class TestUnoUnitTests(unittest.TestCase):
         self.assertEqual(game._current_player, game.players[0])
 
     def test_playing_a_card_that_is_playable_current_hand_size(self):
-        game = UnoGame(2, random=False)
+        game = UnoGame(2)
         game._current_player.hand = [
             UnoCard('red', 5),
             UnoCard('blue', 7),
@@ -393,15 +393,7 @@ class TestUnoUnitTests(unittest.TestCase):
         player.hand = [card]
         self.game.play(0, 0, 'green')
         self.assertEqual(len(player.hand), 0)
-
-    # def test_play_reverse_card(self):
-    #     player = self.game.current_player
-    #     card = self.cardG0
-    #     player.hand = [card]
-    #     self.game.play(0, 0)
-    #     self.assertEqual(self.game._player_cycle, list(reversed(self.game._player_cycle)))
-
-
+        
 #ReversibleCycle Tests
 #-----------------------------------------------------
     def test_init_items(self):
