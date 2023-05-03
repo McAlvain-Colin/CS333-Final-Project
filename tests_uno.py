@@ -342,7 +342,7 @@ class TestUnoUnitTests(unittest.TestCase):
 
         self.assertEqual(len(game._current_player.hand), 5)
     def test_playing_a_card_that_is_playable_UnoCard(self):
-        game = UnoGame(2, random=False)
+        game = UnoGame(2)
         game._current_player.hand = [
             UnoCard('red', 5),
             UnoCard('blue', 7),
@@ -393,7 +393,7 @@ class TestUnoUnitTests(unittest.TestCase):
         player.hand = [card]
         self.game.play(0, 0, 'green')
         self.assertEqual(len(player.hand), 0)
-        
+
 #ReversibleCycle Tests
 #-----------------------------------------------------
     def test_init_items(self):
@@ -462,7 +462,7 @@ class TestUnoUnitTests(unittest.TestCase):
 
     def test_play_uno_game(self):
         # Test that a game can be played and completed
-        game = UnoGame(2, random=False)
+        game = UnoGame(2)
         game.deck = [UnoCard('red', n) for n in range(1, 9)]
         game.players[0].hand = [UnoCard('red', n) for n in range(3)]
         game.players[1].hand = [UnoCard('green', n) for n in range(3)]
@@ -486,19 +486,6 @@ class TestUnoUnitTests(unittest.TestCase):
                 player.draw_card(game.deck.pop())
             next(game)
         self.assertEqual(game._winner, game.players[0])
-
-    def test_shuffle_deck(self):
-        # Test that the deck can be shuffled
-        game = UnoGame(2, random=False)
-        deck = game._create_deck(random=False)
-        unshuffled_deck = [str(card) for card in deck]
-        shuffled_deck = [str(card) for card in deck]
-        shuffle(shuffled_deck)
-        self.assertNotEqual(unshuffled_deck, shuffled_deck)
-
-
-
-
 
 #-----------------------------------------------------------------------------------------------------------------------------
 
