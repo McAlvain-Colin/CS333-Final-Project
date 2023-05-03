@@ -6,7 +6,7 @@ RUN apt-get update && \
     git \
     && pip install pytest coverage
 
-COPY uno.py tests_uno.py random_game.py /images/ /uno/
+COPY uno.py tests_uno.py random_game.py AIUnoGame.py /images/ /uno/
 
 WORKDIR /uno
 
