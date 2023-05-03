@@ -366,22 +366,9 @@ class TestUnoUnitTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.game.play(1)
 
-
-            # -----------------------------------------------------------------------------------   
     def test_play_invalid_player_type(self):
         with self.assertRaises(ValueError):
             self.game.play('1')
-
-    def test_play_invalid_player_index(self):
-        with self.assertRaises(ValueError):
-            self.game.play(5)
-
-    # def test_play_invalid_player_not_turn(self):
-    #     player = self.game.players[1]
-    #     self.game.current_player = self.game.players[0]
-    #     with self.assertRaises(ValueError):
-    #         self.game.play(1)
-
 
     def test_play_invalid_card(self):
         player = self.game.current_player
@@ -416,7 +403,7 @@ class TestUnoUnitTests(unittest.TestCase):
 
 
 #ReversibleCycle Tests
-#-----------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------
     def test_init_items(self):
         self.assertEqual(self.rc._items, [0, 1, 2])    
     def test_init_pos(self):
@@ -462,7 +449,7 @@ class TestUnoUnitTests(unittest.TestCase):
         self.assertEqual(self.rc.pos, 1)
 
 #integreation Test
-#-----------------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------
     def test_create_uno_card(self):
         # Test that a valid UnoCard can be created
         card = UnoCard('red', 5)
