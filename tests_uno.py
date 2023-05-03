@@ -1,5 +1,4 @@
 import unittest
-from random import shuffle
 import sys
 
 from uno import UnoCard
